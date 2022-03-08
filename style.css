@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: all .5s;
+    border-radius: 15px;
+}
+
+#menu a:hover {
+    background-color: rgb(255, 231, 95);
+    color: black;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#header {
+    background-color: rgb(255, 255, 232);
+    z-index: 1000;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+}
+
+#menu {
+    display: flex;
+    gap: 1rem;
+}
+
+#menu a {
+    display: block;
+    padding: .5rem;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+.painel {
+    max-height: 100vh;
+    width: 100%;
+    height: calc(100vh - 20px);
+    background: url(./style/cerveja.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.painelVertical {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #111 10%, transparent 90%);
+}
+
+.painelHorizontal {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #111 30%, transparent 70%);
+}
+
+.painelContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 200px 60px;
+    font-size: 1.6rem;
+    color: #fff;
+    width: 450px;
+    text-shadow: 0.5px 1px rgb(248, 234, 108);
+}
+
+.painelContainer h2 {
+    margin-bottom: 30px;
+    font-size: 1.9rem;
+}
+
+.painelContainer p {
+    font-size: 1.4rem;
+}
+
+#sobre {
+    /* height: 60vh; */
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    /* background: url(./style/cervejaSobre.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.sobreContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 100px;
+    margin-right: 60px;
+    max-width: 40%;
+}
+
+.sobreContainer p {
+    margin-top: 15px;
+    text-align: end;
+    justify-content: end;
+}
+
+#sobre img {
+    height: 400px;
+}
+
+#sabores {
+    margin-top: 70px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#sabores h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.saboresContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.verao {
+    margin-top: 60px;
+    max-width: 40%;
+}
+
+.blonde {
+    margin-top: 30px;
+}
+
+.summer {
+    margin-top: 30px;
+}
+
+.inverno {
+    margin-top: 60px;
+    max-width: 40%;
+}
+
+.ipa {
+    margin-top: 30px;
+}
+
+.stout {
+    margin-top: 30px;
+}
+.saboresImg{
+    height: 150px;
+}
+footer{
+    height: 60vh;
+    padding-top: 30px;
+    background-color: rgb(255, 255, 232);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer h2{
+    margin-bottom: 30px;
+}
+footer a{
+    margin-bottom: 20px;
+    transition: all 0.2s;
+}
+footer a:hover{
+    transform: scale(1.2);
+}
+
+@media(max-width: 768px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+    /* .painel {
+        max-width: 768px;
+        padding-left: 0px;
+        text-align: center;
+    } */
+    #header h1{
+        font-size: 1.6rem;
+    }
+    #menu {
+        text-align: center;
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0;
+        background-color: rgb(255, 255, 232);
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow: hidden;
+    }
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow: auto;
+    }
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #hamburguer {
+        position: relative;
+        text-align: end;
+        border-top: 2px solid;
+        width: 20px;
+        color: black;
+    }
+    #hamburguer::after,
+    #hamburguer::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    #sobre{
+        display: flex;
+        align-items: center;
+    }
+    #sobre img{
+        height: 300px;
+    }
+    
+    .saboresContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    .verao{
+        max-width: 100%;
+    }
+    .blonde p, .summer p{
+        margin: 0 50px;
+    }
+    .inverno{
+        max-width: 100%;
+    }
+    .ipa p, .stout p{
+        margin: 0 50px;
+    }
+}
+@media(max-width: 540px){
+   
+    #sobre img{
+        height: 200px;
+    }
+    .sobreContainer{
+        margin-right: 15px;
+    }
+}
+@media(max-width: 460px){
+    #header h1{
+        font-size: 1.4rem;
+    }
+
+    .painelContainer{
+        font-size: 4px;
+        max-width: 80%;
+    }
+    .painelContainer h2{
+        font-size: 1.4rem;
+    }
+    .painelContainer p{
+        font-size: 1.3rem;
+    }
+    
+    #sobre img{
+        height: 150px;
+    }
+    .sobreContainer{
+        margin-right: 5px;
+        font-size: 1.0rem;
+    }
+}
